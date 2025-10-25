@@ -1,6 +1,32 @@
-# main.py
+def calculate_grade(percentage):
+    if percentage >= 90:
+        return "A+"
+    elif percentage >= 80:
+        return "A"
+    elif percentage >= 70:
+        return "B"
+    elif percentage >= 60:
+        return "C"
+    elif percentage >= 50:
+        return "D"
+    else:
+        return "Fail"
+
 def main():
-    print("Welcome to the Grade Calculator!")
+    print("=== Student Grade Calculator ===")
+    try:
+        marks = float(input("Enter total marks (out of 100): "))
+        if marks < 0 or marks > 100:
+            print("Invalid input! Marks should be between 0 and 100.")
+            return
+        
+        percentage = marks
+        grade = calculate_grade(percentage)
+        print(f"Percentage: {percentage}%")
+        print(f"Grade: {grade}")
+    
+    except ValueError:
+        print("Please enter a valid number!")
 
 if __name__ == "__main__":
     main()
