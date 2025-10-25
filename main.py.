@@ -16,9 +16,9 @@ def main():
     print("=== Student Grade Calculator ===")
     try:
         marks = float(input("Enter total marks (out of 100): "))
-        if marks < 0 or marks > 100:
-            print("Invalid input! Marks should be between 0 and 100.")
-            return
+        if not 0 <= marks <= 100:
+    print("Invalid input! Marks must be between 0 and 100.")
+    return
         
         percentage = marks
         grade = calculate_grade(percentage)
